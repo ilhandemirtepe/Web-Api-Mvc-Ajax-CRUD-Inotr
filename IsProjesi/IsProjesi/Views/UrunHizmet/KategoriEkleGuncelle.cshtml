@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "KategoriEkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    UrunHizmetKategoriBLL urunHizmetKategoriBLL = new UrunHizmetKategoriBLL();
+    List<UrunHizmetKategori> urunHizmetKategoriListesi = urunHizmetKategoriBLL.GetAll().ToList();
+
+
+}
+
+<script src="~/Scripts/InotrScript/UrunHizmet.js"></script>
+
+
+<div class="content-wrapper">
+    @model UrunHizmetKategori
+
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h5 class="panel-title" id="pagetitle"><span>Ürün Kategori Yönetimi </span></h5>
+
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a href="@Url.Action("Kategoriler","UrunHizmet")" class="btn btn-default btn-xs"><b><i class="icon-backward"></i></b>&nbsp;GERİ</a></li>
+                    
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+
+            <a class="heading-elements-toggle"><i class="icon-menu"></i></a>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Ad">Başlık:</label>
+                        <input type="text" class="form-control" id="Ad" placeholder="Ad" value="@Model.Ad">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Bağlı Olduğu Kategori</label>
+                        <select class="form-control" id="UstID">
+                            <option value="0">Üst Kategori </option>
+                            @foreach (var item in urunHizmetKategoriListesi)
+                            {
+                                <option value="@item.ID" @(Model.UstID == item.ID ? "selected" : "")>@item.Ad</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @if (Model.ID == 0)
+                {
+                    <div class="col-md-12">
+
+                        <a class="btn btn-success pull-right" onclick="KategoriEkle()">Ekle <i class="icon-checkmark4 position-right"></i></a>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-12">
+                        <a class="btn btn-success pull-right" href="javascript:;" onclick="KategoriGuncelle(@Model.ID)">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+                    </div>
+                }
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

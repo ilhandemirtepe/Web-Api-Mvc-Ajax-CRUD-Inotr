@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "EkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    YetkiBLL yetkiBLL = new YetkiBLL();
+    KullaniciYetkiBLL kullaniciyetkiBLL = new KullaniciYetkiBLL();
+    List<Yetki> yetkiListe = yetkiBLL.GetAll().ToList();
+    List<KullaniciYetki> kullaniciYetkiListe = kullaniciyetkiBLL.GetAll().ToList();
+
+
+}
+@model Kullanici
+
+
+<script src="~/Scripts/InotrScript/Kullanici.js"></script>
+
+<script>
+
+    $(function () {
+        $('#Kategoriler').multiselect({
+            includeSelectAllOption: true,
+            nonSelectedText: 'Henüz bir kategori seçilmedi',
+            enableFiltering: true
+        });
+        $('#kaydetButton').click(function () {
+            var selected = $("#checkboxes input:checked");
+            var message = "";
+            selected.each(function () {
+                message += $(this).text() + " " + $(this).val() + "\n";
+            });
+            alert(message);
+        });
+    });
+</script>
+
+<div class="content-wrapper">
+    <form id="formKullanici" method="post">
+        <div class="page-header panel" style="padding-bottom: 0;">
+            <div class="page-header-content">
+                <div class="page-title">
+                    <h5>
+                        <a href="@Url.Action("Index","Kullanici")" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="icon-arrow-left13"></i></a>
+                        <span class="text-semibold">Kullanıcı Bilgileri</span>
+
+                    </h5>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="baslik">Kullanıcı Adı:</label>
+                            <input type="text" class="form-control" id="ad" name="Adi" value="@Model.Adi" placeholder="Adı">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Kullanıcı Soyadı:</label>
+                            <input type="text" class="form-control" id="soyad" name="Soyadi" value="@Model.Soyadi" placeholder="Soyadı">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        @*<div class="form-group">
+                                <label for="telefon">Yetki</label>
+                                <select id="yetkiListe" class="form-control" ">
+                                    @foreach (Yetki item in yetkiListe)
+                                    {
+                                        <option value="@Model.YetkiID" @(Model.YetkiID == item.ID ? "selected" : "")>@item.Adi</option>
+                                    }
+
+                                </select>
+
+                            </div>*@
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="telefon">E-Posta Adresi:</label>
+                            <input type="text" class="form-control" name="Email" id="Email" value="@Model.Email" placeholder="E-Posta">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="fax">Parola:</label>
+                            <input type="text" class="form-control" id="parola" name="Parola" value="@Model.Parola" placeholder="Parola">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="panel panel-flat">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="content-group-lg">
+                            <h6 class="text-semibold">Kullanıcı İzinleri</h6>
+                            <p class="content-group"></p>
+
+                            @foreach (var item in yetkiListe)
+                            {
+                                string check = "";
+                                string chkIds = "";
+                                List<KullaniciYetki>
+                                                cat = ViewBag.kontrol;
+                                if (cat.FirstOrDefault(x => x.YetkiID == item.ID && x.KullaniciID == Model.ID) != null)
+                                {
+                                    check = "checked";
+                                    chkIds = "chkIds";
+                                }
+                                <div class="checkbox checkbox-switchery" id="checkboxes">
+                                    <label>
+
+                                        <input type="checkbox" id="@item.ID" name="@chkIds" onchange="nameiDoldurBosalt(@item.ID)" class="switchery" @check value="@item.ID">@item.Adi
+
+                                    </label>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @if (Model.ID == 0)
+            {
+                <div class="col-md-12">
+                    <a class="btn btn-success pull-right" id="ekleButton" onclick="KullaniciGuncelle(@Model.ID)">Ekle <i class="icon-checkmark4 position-right"></i></a>
+                </div>
+            }
+            else
+            {
+                <div class="col-md-12">
+                    <a class="btn btn-success pull-right" href="javascript:void(0);" type="button" onclick='KullaniciGuncelle(@Model.ID)'>
+                        Kaydet
+                        <i class="icon-checkmark4 position-right"></i>
+                    </a>
+                </div>
+            }
+
+        </div>
+
+    </form>
+
+
+
+</div>
+
+<script>
+    function nameiDoldurBosalt(ID) {
+        if ($("#"+ID).prop("name")){
+             $("#"+ID).prop("name", "");
+        } else{
+             $("#"+ID).prop("name", "chkIds");
+        }
+    }
+
+
+    //function nameiDoldurBosalt(ID) {
+    //    debugger;
+    //    if ($("#"+ID).prop("name")){
+    //        $("#"+ID).prop("name", "chkIds");
+    //    } else if ($("#"+ID).prop("name")){
+    //        $("#"+ID).prop("name", false);
+    //    }
+    //}
+
+
+</script>

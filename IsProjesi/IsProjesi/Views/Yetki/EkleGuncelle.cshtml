@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "EkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/InotrScript/Yetki.js"></script>
+
+
+
+@model InoTr.Models.Yetki
+
+
+<script src="~/Scripts/InotrScript/Yetki.js"></script>
+
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="#" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="" icon-arrow-left13"></i></a><span class="text-semibold">Yetki Bilgisi</span>
+
+                </h5>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="baslik">Yetki Adı:</label>
+                        <input type="text" class="form-control" id="Adi" value="@Model.Adi" placeholder="Adı">
+                    </div>
+                </div>
+              
+            </div>
+
+          
+
+
+           
+            <div class="row">
+                @if (Model.ID == 0)
+                {
+                    <div class="col-md-12">
+                        <a class="btn btn-success pull-right" onclick="YetkiEkle()">Ekle <i class="icon-checkmark4 position-right"></i></a>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-12">
+                        <a class="btn btn-success pull-right" href="javascript:;" onclick="YetkiGuncelle(@Model.ID)">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+                    </div>
+                }
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+

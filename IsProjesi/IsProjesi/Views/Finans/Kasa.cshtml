@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "Kasa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<KasaHareketleri>
+
+
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="cari_modul.aspx" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class=" icon-arrow-left13"></i></a><span class="text-semibold">Kasa Hareketleri</span>
+                    <span class="pull-right"><a href="?op=new" class="btn bg-orange-700 btn-labeled"><b><i class="icon-plus3"></i></b>YENİ</a></span>
+
+                </h5>
+            </div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="panel panel-body bg-blue-400 has-bg-image">
+                        <div class="media no-margin">
+                            <div class="media-body">
+                                <h3 class="no-margin"><span>3.817,5</span> TL</h3>
+                                <span class="text-uppercase text-size-mini">Kasa</span>
+                            </div>
+
+                            <div class="media-right media-middle">
+                                <i class="icon-safe icon-3x opacity-75"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tablekasa_wrapper" class="dataTables_wrapper no-footer">
+                <div class="datatable-header"><div id="tablekasa_filter" class="dataTables_filter"><label><span>Arama:</span> <input type="search" class="" placeholder="arama yap..." aria-controls="tablekasa"></label></div><div class="dt-buttons btn-group"><a class="btn btn-default buttons-copy buttons-html5" tabindex="0" aria-controls="tablekasa"><span>Kopyala</span></a><a class="btn btn-default buttons-print" tabindex="0" aria-controls="tablekasa"><span><i class="icon-printer position-left"></i> Yazdır</span></a><a class="btn btn-default buttons-csv buttons-html5" tabindex="0" aria-controls="tablekasa"><span>CSV</span></a><a class="btn btn-default buttons-excel buttons-html5" tabindex="0" aria-controls="tablekasa"><span><i class="icon-file-excel"></i> EXCEL</span></a><a class="btn btn-default buttons-pdf buttons-html5" tabindex="0" aria-controls="tablekasa"><span><i class="icon-file-pdf"></i> PDF</span></a><a class="btn btn-default buttons-collection buttons-colvis btn-icon" tabindex="0" aria-controls="tablekasa"><span><i class="icon-three-bars"></i> <span class="caret"></span></span></a></div><div class="dataTables_length" id="tablekasa_length"><label><span>Gösterim:</span> <select name="tablekasa_length" aria-controls="tablekasa" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-tablekasa_length-aw-container"><span class="select2-selection__rendered" id="select2-tablekasa_length-aw-container" title="25">25</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></label></div></div><div class="datatable-scroll-wrap">
+                    <table id="tablekasa" class="table datatable-basic table-hover dataTable no-footer" role="grid" aria-describedby="tablekasa_info">
+                        <thead>
+                            <tr role="row"><th class="sorting_desc" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-sort="descending" aria-label="ID: activate to sort column ascending">ID</th><th class="sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="İşlem Yapan: activate to sort column ascending">İşlem Yapan</th><th class="sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="Tutar (TL): activate to sort column ascending">Tutar (TL)</th><th class="sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="Açıklama: activate to sort column ascending">Açıklama</th><th class="sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="Tip: activate to sort column ascending">Tip</th><th class="sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="Durum: activate to sort column ascending">Durum</th><th class="sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="Tarih : activate to sort column ascending">Tarih </th><th class="text-center sorting" tabindex="0" aria-controls="tablekasa" rowspan="1" colspan="1" aria-label="İşlemler: activate to sort column ascending">İşlemler</th></tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr role="row" class="odd">
+                                    <td class="sorting_1">@item.ID</td>
+                                    <td>TEST@item</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>GELİR</td>
+                                    <td><span class="label label-success">AKTIF</span></td>
+                                    <td>@item.Tarih</td>
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-labeled dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                               <b><i class="icon-cog3 position-left"></i></b> İşlemler <span class="caret"></span>
+                                            </button> <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a title="Düzenle'" href="?op=edit&amp;id=9"><i class="icon-pencil7"></i>Düzenle</a>
+                                                </li>
+                                                <li>
+                                                    <a title="Sil" onclick="kayitsil(9)">
+                                                        <i class="icon-trash"></i> Sil
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div><div class="datatable-footer"><div class="dataTables_info" id="tablekasa_info" role="status" aria-live="polite">8 kayıttan 1 - 8 arası gösteriliyor</div><div class="dataTables_paginate paging_simple_numbers" id="tablekasa_paginate"><a class="paginate_button previous disabled" aria-controls="tablekasa" data-dt-idx="0" tabindex="0" id="tablekasa_previous">←</a><span><a class="paginate_button current" aria-controls="tablekasa" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="tablekasa" data-dt-idx="2" tabindex="0" id="tablekasa_next">→</a></div></div>
+            </div>
+            <script type="text/javascript">
+
+
+                function kayitsil(id) {
+
+                    swal({
+                        title: "Bu işlemi yapmak istediğinize emin misiniz?",
+                        text: "Silme işlemini onaylayın.",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#EF5350",
+                        confirmButtonText: "Tamam",
+                        cancelButtonText: "İptal",
+                        closeOnConfirm: false,
+                        closeOnCancel: false
+                    }, function (isConfirm) {
+                        if (isConfirm) {
+                            loading();
+                            $.ajax({
+                                type: "POST",
+                                url: "webservice.asmx/kayitsil",
+                                contentType: "application/json; charset=utf-8",
+                                data: JSON.stringify({
+                                    key: "i6/lOjI1SC1zJEcCgK1ffw==",
+                                    id: id,
+                                    durum: 0
+                                }),
+                                success: function (msg) {
+                                    result = msg.d;
+                                },
+                                complete: function () {
+                                    unloading();
+                                    if (result) {
+                                        kasalistele();
+                                        swal({
+                                            title: "Başarılı!",
+                                            text: "Silme işlemi başarıyla yapıldı.",
+                                            confirmButtonColor: "#66BB6A",
+                                            type: "success"
+                                        });
+
+                                    } else {
+                                        swal({
+                                            title: "Hata Oluştu",
+                                            confirmButtonText: "Tamam",
+                                            text: "Silme sırasında hata oluştu.",
+                                            confirmButtonColor: "#EF5350",
+                                            type: "error"
+                                        });
+                                    }
+                                }, error: function () {
+                                    swal({
+                                        title: "İşlem sırasında hata oluştu",
+                                        text: "Yönlendiriliyorsunuz...",
+                                        confirmButtonColor: "#EF5350",
+                                        type: "error"
+                                    }, function () {
+                                        setTimeout(function () {
+                                            window.location.href = "?";
+                                        }, 500);
+                                    });
+                                }
+                            });
+                        }
+                        else {
+                            swal({
+                                title: "İptal Edildi",
+                                confirmButtonText: "Tamam",
+                                text: "Silme işlemi iptal edildi.",
+                                confirmButtonColor: "#EF5350",
+                                type: "info"
+                            });
+                        }
+                    });
+                }
+
+
+
+
+
+
+            </script>
+
+        </div>
+    </div>
+
+
+</div>

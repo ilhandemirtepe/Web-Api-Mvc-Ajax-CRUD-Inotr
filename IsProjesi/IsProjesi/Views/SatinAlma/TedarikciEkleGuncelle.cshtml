@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "TedarikciEkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+
+
+
+
+    ilBLL ilbll = new ilBLL();
+    ilceBLL ilcebll = new ilceBLL();
+    TedarikciTurBLL tedarikciTurBLL = new TedarikciTurBLL();
+    List<il> ilListe = ilbll.GetAll().ToList();
+    List<ilce> ilceListe = ilcebll.GetAll().ToList();
+
+    List<TedarikciTur> tedarikTurList = tedarikciTurBLL.GetAll().ToList();
+
+
+   
+
+
+
+
+}
+
+@model Tedarikci
+
+
+
+<script src="~/Scripts/InotrScript/SatinAlma.js"></script>
+
+
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="#" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="" icon-arrow-left13"></i></a><span class="text-semibold">Tedarik Bilgisi</span>
+
+                </h5>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="FirmaAdi">Firma Adı:</label>
+                        <input type="text" class="form-control" id="FirmaAdi" value="@Model.FirmaAdi" placeholder="Firma Adı">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Tedarik Tür">Tedarik Tür:</label>
+
+                        <select id="tedarikTurListe" class="form-control">
+                            @foreach (TedarikciTur item in tedarikTurList)
+                            {
+                                <option value="@item.ID" @(Model.TedarikTurID == item.ID ? "selected" : "")>@item.Adi</option>
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Email">Email:</label>
+                        <input type="text" class="form-control" id="Email" value="@Model.Email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Telefon">Telefon:</label>
+                        <input type="text" class="form-control" id="Telefon" value="@Model.Telefon" placeholder="Telefon">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Fax">Fax:</label>
+                        <input type="text" class="form-control" id="Fax" value="@Model.Fax" placeholder="Fax">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="baslik">Cep Telefon:</label>
+                        <input type="text" class="form-control" id="CepTel" value="@Model.CepTel" placeholder="cep telefon">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Yetkili">Yetkili:</label>
+                        <input type="text" class="form-control" id="Yetkili" value="@Model.Yetkili" placeholder="Yetkili">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="FaturaUnvan">Fatura Ünvan:</label>
+                        <input type="text" class="form-control" id="FaturaUnvan" value="@Model.FaturaUnvan" placeholder="Fatura Ünvan">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="VergiNumarası">Vergi Numarası:</label>
+                        <input type="text" class="form-control" id="VergiNumarası" value="@Model.VergiNumarası" placeholder="vergi numarası">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="VergiDairesi">Vergi Dairesi:</label>
+                        <input type="text" class="form-control" id="VergiDairesi" value="@Model.VergiDairesi" placeholder="vergi dairesi">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label for="il">İl:</label>
+                        <select id="illerID" class="form-control">
+                            @foreach (il item in ilListe)
+                            {
+                                <option value="@item.ID" @(Model.ilID == item.ID ? "selected" : "")>@item.Adi</option>
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fax">İlçe:</label>
+                        <select id="ilceListesiID" class="form-control">
+                            @foreach (ilce item in ilceListe)
+                            {
+                                <option value="@item.ID" @(Model.ilceID == item.ID ? "selected" : "")>@item.IlceAdi</option>
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Adres">Durum:</label>
+                        <select class="form-control" id="Durumu">
+                            @if (Model.ID == 0)
+                            {
+                                <option value="">Durumu Seçiniz</option>
+                            }
+                            <option value="1" @(Model.Durumu == 1 && Model.ID > 0 ? "selected" : "" )>Aktif</option>
+                            <option value="0" @(Model.Durumu == 0 && Model.ID > 0 ? "selected" : "" )>Pasif</option>
+                           
+                        </select>
+
+
+
+                   
+                     
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="Adres">Adres:</label>
+                        <input type="text" class="form-control" id="Adres" value="@Model.Adres" placeholder="Adres">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                @if (Model.ID == 0)
+                {
+                    <div class="col-md-12">
+
+                        <a class="btn btn-success pull-right" onclick="TedarikEkle()">Ekle <i class="icon-checkmark4 position-right"></i></a>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-12">
+                        <a class="btn btn-success pull-right" href="javascript:;" onclick="TedarikGuncelle(@Model.ID)">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+                    </div>
+                }
+
+
+            </div>
+
+           
+
+
+
+        </div>
+
+    </div>
+</div>
+

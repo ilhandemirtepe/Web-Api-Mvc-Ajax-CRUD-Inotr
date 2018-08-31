@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "EkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    EvrakTurBLL evrakTurBll = new EvrakTurBLL();
+    List<EvrakTur> evrakTurListe = evrakTurBll.GetAll().ToList();
+}
+
+@model Evrak
+
+<script src="~/Scripts/InotrScript/Evrak.js"></script>
+
+
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="#" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="" icon-arrow-left13"></i></a><span class="text-semibold">Evrak Bilgileri</span>
+                </h5>
+            </div>
+        </div>
+        <form id="form1" action="/Evrak/EkleGuncelle/" method="post" enctype="multipart/form-data">
+            <div class="panel-body">
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="baslik">Evrak Adı:</label>
+                            <input type="text" name="Adi" class="form-control" id="ad" value="@Model.Adi" placeholder="Evrak Adı Giriniz">
+                            @if (Model.ID > 0)
+                            {
+                                <input type="hidden" name="ID" class="form-control" id="ID" value="@Model.ID">
+                            }
+                          
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="telefon">Evrak Türü:</label>
+                            <select id="evrakTur" name="EvrakTurID" class="form-control">
+                                @foreach (EvrakTur item in evrakTurListe)
+                                {
+                                    <option value="@item.ID" @(item.ID == Model.EvrakTurID ? "selected" : "")>@item.Adi</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="file">Dosya:</label>
+                        <div class="form-group uploader">
+                            
+                            <input type="file" name="file1" id="file" class="file-styled">
+                            <span class="filename" style="user-select: none;">Dosya seçilmedi</span>
+                            <span class="action btn btn-default" style="user-select: none;">Dosya Seçin</span>
+                         
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <input type="submit" value="Gönder" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

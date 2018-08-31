@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/InotrScript/Kullanici.js"></script>
+<div class="content-wrapper">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <a href="@Url.Action("EkleGuncelle","Kullanici")">
+                <input type="button" name="name" value="Kullanıcı Ekle" class="btn btn-primary" />
+            </a>
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        <table class="table datatable-responsive-control-right">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Kullanıcı Soyadı</th>
+                    <th>E-Posta Adresi</th>
+                    <th>Tarih</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="KullaniciListele"></tbody>
+        </table>
+    </div>
+</div>
+

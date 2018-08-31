@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Teklif";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    @model List<SatinAlmaTeklif>
+
+ 
+
+
+
+<script src="~/Scripts/InotrScript/SatinAlma.js"></script>
+<div class="content-wrapper">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+
+
+
+
+            <a href="@Url.Action("TeklifEkleGuncelle","SatinAlma")">
+                <input type="button" name="name" value="Yeni Teklif Ekle" class="btn btn-primary" />
+            </a>
+
+
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        <table class="table datatable-responsive-control-right">
+            <thead>
+                <tr>
+                    <th>Tedarikçi  Adı</th>
+                    <th>Toplam Tutar</th>
+                    <th>Tarih</th>
+                    <th>Teklif Tarih</th>
+                    <th>Durum</th>                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.Tedarikci.FirmaAdi</td>
+                        <td>@item.ToplamTutar</td>
+                        <td>@item.Tarih</td>
+                        <td>@item.TeklifTarih</td>
+                   
+                        @if (item.Durum == 0)
+                        {
+
+                            <td><span class="label label-warning">Beklemede</span></td>
+
+
+                        }
+                        else if(item.Durum==1)
+                        {
+                            <td><span class="label label-success">Onaylandı</span></td>
+
+                        }
+                        else
+                        {
+                            <td><span class="label label-danger">İptal</span></td>
+
+                        }
+
+                        <td class="text-center">
+                            <ul class="icons-list">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-menu9"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li onclick="TeklifGuncelleSayfasiniAc(@item.ID)"><a href="#"><i class="btn btn-primary"></i>Düzenle</a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

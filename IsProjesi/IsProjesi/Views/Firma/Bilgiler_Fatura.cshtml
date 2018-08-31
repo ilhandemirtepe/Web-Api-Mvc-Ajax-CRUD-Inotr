@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Bilgiler_Fatura";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="~/Scripts/InotrScript/Firma.js"></script>
+
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="#" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="" icon-arrow-left13"></i></a><span class="text-semibold">Fatura Bilgileri</span>
+
+                </h5>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Unvan">Fatura Ünvan:</label>
+                        <input type="text" class="form-control" id="Unvan" value="@Model.Unvan">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fax">Adres:</label>
+                        <input type="text" class="form-control" id="Adres" value="@Model.Adres">
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="VergiDairesi">Vergi Dairesi:</label>
+                        <input type="text" class="form-control" id="VergiDairesi" value="@Model.VergiDairesi">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="VergiNumarasi">Vergi Numarası:</label>
+                        <input type="text" class="form-control" id="VergiNumarasi" value="@Model.VergiNumarasi">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Logo">Logo:</label>
+                        <input type="file" class="form-control" id="Logo" value="@Model.Logo" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <a class="btn btn-success pull-right" href="javascript:;" onclick="FirmaFaturaBilgisiDuzenle('@Model.ID')">Düzenle <i class="icon-checkmark4 position-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

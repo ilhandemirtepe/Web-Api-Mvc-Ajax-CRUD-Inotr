@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="inotr_sistemModelStoreContainer" CdmEntityContainer="inotr_sistemEntities">
+    <EntitySetMapping Name="BankaHesapBilgisi">
+      <EntityTypeMapping TypeName="inotr_sistemModel.BankaHesapBilgisi">
+        <MappingFragment StoreEntitySet="BankaHesapBilgisi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirmaID" ColumnName="FirmaID" />
+          <ScalarProperty Name="BankaAdi" ColumnName="BankaAdi" />
+          <ScalarProperty Name="BankaSube" ColumnName="BankaSube" />
+          <ScalarProperty Name="ParaBirimi" ColumnName="ParaBirimi" />
+          <ScalarProperty Name="HesapNo" ColumnName="HesapNo" />
+          <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+          <ScalarProperty Name="IbanNo" ColumnName="IbanNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DestekBildirimler">
+      <EntityTypeMapping TypeName="inotr_sistemModel.DestekBildirimler">
+        <MappingFragment StoreEntitySet="DestekBildirimler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DestekKategoriID" ColumnName="DestekKategoriID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="IsID" ColumnName="IsID" />
+          <ScalarProperty Name="Konu" ColumnName="Konu" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Dosya" ColumnName="Dosya" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DestekKategori">
+      <EntityTypeMapping TypeName="inotr_sistemModel.DestekKategori">
+        <MappingFragment StoreEntitySet="DestekKategori">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DestekMesajlari">
+      <EntityTypeMapping TypeName="inotr_sistemModel.DestekMesajlari">
+        <MappingFragment StoreEntitySet="DestekMesajlari">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DestekBildirimID" ColumnName="DestekBildirimID" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evrak">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Evrak">
+        <MappingFragment StoreEntitySet="Evrak">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+          <ScalarProperty Name="EvrakTurID" ColumnName="EvrakTurID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Yolu" ColumnName="Yolu" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EvrakTur">
+      <EntityTypeMapping TypeName="inotr_sistemModel.EvrakTur">
+        <MappingFragment StoreEntitySet="EvrakTur">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Firma">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Firma">
+        <MappingFragment StoreEntitySet="Firma">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="ilID" ColumnName="ilID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Yetkili" ColumnName="Yetkili" />
+          <ScalarProperty Name="Gsm" ColumnName="Gsm" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GelirFatura">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GelirFatura">
+        <MappingFragment StoreEntitySet="GelirFatura">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="SatisSiparisID" ColumnName="SatisSiparisID" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="ToplamKdv" ColumnName="ToplamKdv" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="OlusumTarihi" ColumnName="OlusumTarihi" />
+          <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+          <ScalarProperty Name="SonOdemeTarih" ColumnName="SonOdemeTarih" />
+          <ScalarProperty Name="OdemeDurum" ColumnName="OdemeDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GelirFatura_Detay">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GelirFatura_Detay">
+        <MappingFragment StoreEntitySet="GelirFatura_Detay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GelirFaturaID" ColumnName="GelirFaturaID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="KdvOrani" ColumnName="KdvOrani" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GelirOdeme">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GelirOdeme">
+        <MappingFragment StoreEntitySet="GelirOdeme">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GelirFaturaID" ColumnName="GelirFaturaID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenelTasarimAyarlari">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GenelTasarimAyarlari">
+        <MappingFragment StoreEntitySet="GenelTasarimAyarlari">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IndexLogo" ColumnName="IndexLogo" />
+          <ScalarProperty Name="loginLogo" ColumnName="loginLogo" />
+          <ScalarProperty Name="PanelLogo" ColumnName="PanelLogo" />
+          <ScalarProperty Name="FavikonIkon" ColumnName="FavikonIkon" />
+          <ScalarProperty Name="Ikon" ColumnName="Ikon" />
+          <ScalarProperty Name="AcilisBaslik" ColumnName="AcilisBaslik" />
+          <ScalarProperty Name="YoneticiGirisBaslik" ColumnName="YoneticiGirisBaslik" />
+          <ScalarProperty Name="YoneticiPanelBaslik" ColumnName="YoneticiPanelBaslik" />
+          <ScalarProperty Name="MusteriGirisBaslik" ColumnName="MusteriGirisBaslik" />
+          <ScalarProperty Name="MusteriPanelBaslik" ColumnName="MusteriPanelBaslik" />
+          <ScalarProperty Name="Renk1" ColumnName="Renk1" />
+          <ScalarProperty Name="Renk2" ColumnName="Renk2" />
+          <ScalarProperty Name="IndexArkaplanResim" ColumnName="IndexArkaplanResim" />
+          <ScalarProperty Name="YoneticiArkaplanResim" ColumnName="YoneticiArkaplanResim" />
+          <ScalarProperty Name="MusteriArkaPlanResim" ColumnName="MusteriArkaPlanResim" />
+          <ScalarProperty Name="FaturaAltBilgi" ColumnName="FaturaAltBilgi" />
+          <ScalarProperty Name="SiparisUstBilgi" ColumnName="SiparisUstBilgi" />
+          <ScalarProperty Name="SiparisAltBilgi" ColumnName="SiparisAltBilgi" />
+          <ScalarProperty Name="MailTasarimi" ColumnName="MailTasarimi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiderFatura">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GiderFatura">
+        <MappingFragment StoreEntitySet="GiderFatura">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatinAlmaSiparisID" ColumnName="SatinAlmaSiparisID" />
+          <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="FaturaTarih" ColumnName="FaturaTarih" />
+          <ScalarProperty Name="SonOdemeTarih" ColumnName="SonOdemeTarih" />
+          <ScalarProperty Name="FaturaOlusumTarihi" ColumnName="FaturaOlusumTarihi" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="OdemeDurumu" ColumnName="OdemeDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiderFatura_Detay">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GiderFatura_Detay">
+        <MappingFragment StoreEntitySet="GiderFatura_Detay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GiderFaturaID" ColumnName="GiderFaturaID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="KdvOrani" ColumnName="KdvOrani" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiderOdeme">
+      <EntityTypeMapping TypeName="inotr_sistemModel.GiderOdeme">
+        <MappingFragment StoreEntitySet="GiderOdeme">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GiderFaturaID" ColumnName="GiderFaturaID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="il">
+      <EntityTypeMapping TypeName="inotr_sistemModel.il">
+        <MappingFragment StoreEntitySet="il">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ilce">
+      <EntityTypeMapping TypeName="inotr_sistemModel.ilce">
+        <MappingFragment StoreEntitySet="ilce">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ilID" ColumnName="ilID" />
+          <ScalarProperty Name="IlceAdi" ColumnName="IlceAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Isler">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Isler">
+        <MappingFragment StoreEntitySet="Isler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="SatinAlmaSiparisID" ColumnName="SatinAlmaSiparisID" />
+          <ScalarProperty Name="SatisSiparisID" ColumnName="SatisSiparisID" />
+          <ScalarProperty Name="UrunHizmetID" ColumnName="UrunHizmetID" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="Acıklama" ColumnName="Acıklama" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Resim" ColumnName="Resim" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kasa">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Kasa">
+        <MappingFragment StoreEntitySet="Kasa">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Deger" ColumnName="Deger" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KasaHareketleri">
+      <EntityTypeMapping TypeName="inotr_sistemModel.KasaHareketleri">
+        <MappingFragment StoreEntitySet="KasaHareketleri">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KasaID" ColumnName="KasaID" />
+          <ScalarProperty Name="GiderOdemeID" ColumnName="GiderOdemeID" />
+          <ScalarProperty Name="GelirOdemeID" ColumnName="GelirOdemeID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kdv">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Kdv">
+        <MappingFragment StoreEntitySet="Kdv">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KdvYuzdesi" ColumnName="KdvYuzdesi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MiktarTur">
+      <EntityTypeMapping TypeName="inotr_sistemModel.MiktarTur">
+        <MappingFragment StoreEntitySet="MiktarTur">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MiktarTurAdi" ColumnName="MiktarTurAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteri">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Musteri">
+        <MappingFragment StoreEntitySet="Musteri">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+          <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Gsm" ColumnName="Gsm" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="FaturaUnvan" ColumnName="FaturaUnvan" />
+          <ScalarProperty Name="FaturaAdres" ColumnName="FaturaAdres" />
+          <ScalarProperty Name="VergiDairesi" ColumnName="VergiDairesi" />
+          <ScalarProperty Name="VergiNo" ColumnName="VergiNo" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="IletisimDurumu" ColumnName="IletisimDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusteriAdaylari">
+      <EntityTypeMapping TypeName="inotr_sistemModel.MusteriAdaylari">
+        <MappingFragment StoreEntitySet="MusteriAdaylari">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IlceID" ColumnName="IlceID" />
+          <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Not">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Not">
+        <MappingFragment StoreEntitySet="Not">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosBilgisi">
+      <EntityTypeMapping TypeName="inotr_sistemModel.PosBilgisi">
+        <MappingFragment StoreEntitySet="PosBilgisi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="MurstID" ColumnName="MurstID" />
+          <ScalarProperty Name="BankaAdi" ColumnName="BankaAdi" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Parola" ColumnName="Parola" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatinAlmaBankaHesapBilgisi">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatinAlmaBankaHesapBilgisi">
+        <MappingFragment StoreEntitySet="SatinAlmaBankaHesapBilgisi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatinAlmaTedarikID" ColumnName="SatinAlmaTedarikID" />
+          <ScalarProperty Name="BankaAdi" ColumnName="BankaAdi" />
+          <ScalarProperty Name="BankaSube" ColumnName="BankaSube" />
+          <ScalarProperty Name="ParaBirimi" ColumnName="ParaBirimi" />
+          <ScalarProperty Name="HesapNo" ColumnName="HesapNo" />
+          <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+          <ScalarProperty Name="IbanNo" ColumnName="IbanNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatinAlmaSiparis">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatinAlmaSiparis">
+        <MappingFragment StoreEntitySet="SatinAlmaSiparis">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatinAlmaTeklifID" ColumnName="SatinAlmaTeklifID" />
+          <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="ToplamIndirim" ColumnName="ToplamIndirim" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="TeklifDetay" ColumnName="TeklifDetay" />
+          <ScalarProperty Name="GenelToplamTutar" ColumnName="GenelToplamTutar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatinAlmaSiparis_Detay">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatinAlmaSiparis_Detay">
+        <MappingFragment StoreEntitySet="SatinAlmaSiparis_Detay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatinAlmaSiparisID" ColumnName="SatinAlmaSiparisID" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="ToplamIndirim" ColumnName="ToplamIndirim" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="TeklifDetay" ColumnName="TeklifDetay" />
+          <ScalarProperty Name="GenelToplamTutar" ColumnName="GenelToplamTutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatinAlmaTeklif">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatinAlmaTeklif">
+        <MappingFragment StoreEntitySet="SatinAlmaTeklif">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="ToplamIndirim" ColumnName="ToplamIndirim" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="TeklifDetay" ColumnName="TeklifDetay" />
+          <ScalarProperty Name="GenelToplamTutar" ColumnName="GenelToplamTutar" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="TeklifTarih" ColumnName="TeklifTarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatinAlmaTeklif_Detay">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatinAlmaTeklif_Detay">
+        <MappingFragment StoreEntitySet="SatinAlmaTeklif_Detay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatinAlmaTeklifID" ColumnName="SatinAlmaTeklifID" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="Indirim" ColumnName="Indirim" />
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="KdvOran" ColumnName="KdvOran" />
+          <ScalarProperty Name="KdvTutar" ColumnName="KdvTutar" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="KalemAdi" ColumnName="KalemAdi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisSiparis">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatisSiparis">
+        <MappingFragment StoreEntitySet="SatisSiparis">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatisTeklifID" ColumnName="SatisTeklifID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="ToplamIndirim" ColumnName="ToplamIndirim" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="TeklifDetay" ColumnName="TeklifDetay" />
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisSiparis_Detay">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatisSiparis_Detay">
+        <MappingFragment StoreEntitySet="SatisSiparis_Detay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatisSiparisID" ColumnName="SatisSiparisID" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="ToplamIndirim" ColumnName="ToplamIndirim" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="TeklifDetay" ColumnName="TeklifDetay" />
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisTalep">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatisTalep">
+        <MappingFragment StoreEntitySet="SatisTalep">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="MusteriAdayID" ColumnName="MusteriAdayID" />
+          <ScalarProperty Name="Konu" ColumnName="Konu" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Dokuman" ColumnName="Dokuman" />
+          <ScalarProperty Name="FirmaNotu" ColumnName="FirmaNotu" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisTeklif">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatisTeklif">
+        <MappingFragment StoreEntitySet="SatisTeklif">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatisTalepID" ColumnName="SatisTalepID" />
+          <ScalarProperty Name="MusteriAdayID" ColumnName="MusteriAdayID" />
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="ToplamIndirim" ColumnName="ToplamIndirim" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="OdemeTuru" ColumnName="OdemeTuru" />
+          <ScalarProperty Name="TeklifDetay" ColumnName="TeklifDetay" />
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisTeklif_Detay">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SatisTeklif_Detay">
+        <MappingFragment StoreEntitySet="SatisTeklif_Detay">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SatisTeklifID" ColumnName="SatisTeklifID" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="Indirim" ColumnName="Indirim" />
+          <ScalarProperty Name="BirimFiyat" ColumnName="BirimFiyat" />
+          <ScalarProperty Name="KdvOran" ColumnName="KdvOran" />
+          <ScalarProperty Name="KdvTutar" ColumnName="KdvTutar" />
+          <ScalarProperty Name="ToplamTutar" ColumnName="ToplamTutar" />
+          <ScalarProperty Name="KalemAdi" ColumnName="KalemAdi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sistem">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Sistem">
+        <MappingFragment StoreEntitySet="Sistem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AlanAdi" ColumnName="AlanAdi" />
+          <ScalarProperty Name="IpAdresi" ColumnName="IpAdresi" />
+          <ScalarProperty Name="EpostaAdresi" ColumnName="EpostaAdresi" />
+          <ScalarProperty Name="EPostaSifre" ColumnName="EPostaSifre" />
+          <ScalarProperty Name="EPostaGidenSunucuAdresi" ColumnName="EPostaGidenSunucuAdresi" />
+          <ScalarProperty Name="EPostaPortNumarasi" ColumnName="EPostaPortNumarasi" />
+          <ScalarProperty Name="SmsKullaniciAdi" ColumnName="SmsKullaniciAdi" />
+          <ScalarProperty Name="SmsSifre" ColumnName="SmsSifre" />
+          <ScalarProperty Name="SmsNumarasi" ColumnName="SmsNumarasi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SistemIletisim">
+      <EntityTypeMapping TypeName="inotr_sistemModel.SistemIletisim">
+        <MappingFragment StoreEntitySet="SistemIletisim">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Modul" ColumnName="Modul" />
+          <ScalarProperty Name="SmsIcerik" ColumnName="SmsIcerik" />
+          <ScalarProperty Name="EpostIcerik" ColumnName="EpostIcerik" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+          <ScalarProperty Name="Zaman" ColumnName="Zaman" />
+          <ScalarProperty Name="EpostaKonusu" ColumnName="EpostaKonusu" />
+          <ScalarProperty Name="SmsBaslik" ColumnName="SmsBaslik" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="ModulAdi" ColumnName="ModulAdi" />
+          <ScalarProperty Name="FonksiyonDurumu" ColumnName="FonksiyonDurumu" />
+          <ScalarProperty Name="Konu" ColumnName="Konu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StokHareketleri">
+      <EntityTypeMapping TypeName="inotr_sistemModel.StokHareketleri">
+        <MappingFragment StoreEntitySet="StokHareketleri">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="StokTip" ColumnName="StokTip" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="StokAdet" ColumnName="StokAdet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="inotr_sistemModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tedarikci">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Tedarikci">
+        <MappingFragment StoreEntitySet="Tedarikci">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ilID" ColumnName="ilID" />
+          <ScalarProperty Name="ilceID" ColumnName="ilceID" />
+          <ScalarProperty Name="TedarikTurID" ColumnName="TedarikTurID" />
+          <ScalarProperty Name="FirmaAdi" ColumnName="FirmaAdi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Yetkili" ColumnName="Yetkili" />
+          <ScalarProperty Name="CepTel" ColumnName="CepTel" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="VergiNumarası" ColumnName="VergiNumarası" />
+          <ScalarProperty Name="VergiDairesi" ColumnName="VergiDairesi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="FaturaUnvan" ColumnName="FaturaUnvan" />
+          <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunHizmet">
+      <EntityTypeMapping TypeName="inotr_sistemModel.UrunHizmet">
+        <MappingFragment StoreEntitySet="UrunHizmet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KdvID" ColumnName="KdvID" />
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="MiktarTurD" ColumnName="MiktarTurD" />
+          <ScalarProperty Name="StokDurum" ColumnName="StokDurum" />
+          <ScalarProperty Name="UrunTipID" ColumnName="UrunTipID" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="StokAdetFinal" ColumnName="StokAdetFinal" />
+          <ScalarProperty Name="DonguselAralik" ColumnName="DonguselAralik" />
+          <ScalarProperty Name="DonguselFiyat" ColumnName="DonguselFiyat" />
+          <ScalarProperty Name="UrunIcerik" ColumnName="UrunIcerik" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+          <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunHizmetKategori">
+      <EntityTypeMapping TypeName="inotr_sistemModel.UrunHizmetKategori">
+        <MappingFragment StoreEntitySet="UrunHizmetKategori">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="UstID" ColumnName="UstID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FirmaFaturaBilgi">
+      <EntityTypeMapping TypeName="inotr_sistemModel.FirmaFaturaBilgi">
+        <MappingFragment StoreEntitySet="FirmaFaturaBilgi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="VergiDairesi" ColumnName="VergiDairesi" />
+          <ScalarProperty Name="VergiNumarasi" ColumnName="VergiNumarasi" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciYetki">
+      <EntityTypeMapping TypeName="inotr_sistemModel.KullaniciYetki">
+        <MappingFragment StoreEntitySet="KullaniciYetki">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+          <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParaBirimi">
+      <EntityTypeMapping TypeName="inotr_sistemModel.ParaBirimi">
+        <MappingFragment StoreEntitySet="ParaBirimi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TedarikciTur">
+      <EntityTypeMapping TypeName="inotr_sistemModel.TedarikciTur">
+        <MappingFragment StoreEntitySet="TedarikciTur">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetki">
+      <EntityTypeMapping TypeName="inotr_sistemModel.Yetki">
+        <MappingFragment StoreEntitySet="Yetki">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

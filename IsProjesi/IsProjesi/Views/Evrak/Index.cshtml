@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "CariEvraklar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Evrak>
+
+<script src="~/Scripts/InotrScript/Evrak.js"></script>
+
+<div class="content-wrapper">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <div class="col-md-4">
+                <a href="#">
+                    <input onclick="GuncelleSayfasiniAc()" type="button" name="evrak" value="Evrak Ekle" class="btn btn-primary" />
+                </a>
+            </div>
+            <div class="col-md-4">
+                <div class="form-check form-check-inline">
+                    <label class="checkbox-inline">
+                        <input class="form-check-input" onchange='filtrele(3)' type="checkbox" id="inlineCheckbox2" value="2">Firma
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="checkbox-inline">
+                        <input class="form-check-input" onchange='filtrele(1)' type="checkbox" id="inlineCheckbox1" value="1">Tedarikçi
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="checkbox-inline">
+                        <input class="form-check-input" onchange='filtrele(2)' type="checkbox" id="inlineCheckbox3" value="3">Müşteri
+                    </label>
+                </div>
+            </div>
+
+            <div style="float:right" class="heading-elements col-md-4">
+                <ul class="icons-list">
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+        </div>
+        <table class="table datatable-responsive-control-right">
+            <thead>
+                <tr>
+                    <th>Evrak Adı</th>
+                    <th>Evrak Türü</th>
+                    <th>En Son Güncelleme Tarihi</th>
+                    <th>Evrak Yolu</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="@item.EvrakTurID">
+                        <td>@item.Adi</td>
+                        <td>@item.EvrakTur.Adi</td>
+                        <td>@item.Tarih</td>
+                        <td>@item.Yolu</td>
+                        <td class="text-center">
+                            <ul class="icons-list">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-menu9"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li onclick="GuncelleSayfasiniAc(@item.ID)"><a href="#"><i class="btn btn-primary"></i>Düzenle</a></li>
+                                        <li onclick="EvrakSil(@item.ID)"><a href="#"><i class="btn btn-danger"></i>Sil</a></li>
+                                    </ul>
+
+                                </li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

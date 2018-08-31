@@ -1,0 +1,556 @@
+﻿
+@{
+    ViewBag.Title = "TeklifEkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+
+    TedarikciBLL tedarikciBLL = new TedarikciBLL();
+    List<Tedarikci> tedarikList = tedarikciBLL.GetAll().ToList();
+
+    SatinAlmaTeklif_DetayBLL satinAlmaTeklif_DetayBLL = new SatinAlmaTeklif_DetayBLL();
+    List<SatinAlmaTeklif_Detay> salist = satinAlmaTeklif_DetayBLL.GetAll().ToList();
+
+    SatinAlmaTeklif_Detay satinAlmaTeklif_Detay = new SatinAlmaTeklif_Detay();
+
+
+
+}
+
+@model SatinAlmaTeklif
+
+
+
+@*<script src="~/Scripts/InotrScript/SatinAlma.js"></script>*@
+
+<script>
+
+    function IndirimDegistir(ID)
+    {
+    $(document).ready(function () {
+
+
+
+
+
+
+       
+            $.ajax({
+                url: "/SatinAlma/TeklifVeDetaylar/" ,
+                type: 'GET',
+                data: { ID: @(Model.ID) },
+                success: function (response) {
+                  
+                    $('#gelentop').val($("#topindirim").val())
+
+
+                },
+                error: function () {
+                    swal
+                      (
+                            'İşlem hatalı',
+                            'Sayfa açılırken hata oluştu lutfen  tekrar deneyiniz..',
+                            'error'
+                      )
+                }
+            });
+       
+
+
+    });
+    }
+</script>
+
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="#" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="" icon-arrow-left13"></i></a><span class="text-semibold">Teklif Bilgisi</span>
+
+                </h5>
+            </div>
+        </div>
+
+       <input type="text" value="" id="gelentop" />
+
+        <div style="margin-left:15px;margin-right:15px;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="Tedarikçi Adı">Tedarikçi Adı:</label>
+                        <select id="tedarikListe" class="form-control">
+                            @if (Model.ID == 0)
+                            {
+                                <option value="">Tedarikçi Seçiniz</option>
+                            }
+                            @foreach (Tedarikci item in tedarikList)
+                            {
+                                <option value="@item.ID" @(Model.TedarikciID == item.ID ? "selected" : "")>@item.FirmaAdi</option>
+                            }
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="ToplamTutar">Tutar:</label>
+                        <input type="text" class="form-control" id="ToplamTutar" value="@Model.ToplamTutar" placeholder="Toplam Tutar">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="KdvToplam">KDV:</label>
+
+                        <input type="text" class="form-control" readonly="readonly" id="KdvToplam" value="@Model.KdvToplam" placeholder="Kdv Toplam">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="GenelToplamTutar"> Genel Toplam Tutar:</label>
+                        <input type="text" class="form-control" readonly="readonly" id="GenelToplamTutar" value="@Model.GenelToplamTutar" placeholder="Genel Toplam Tutar">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="ToplamIndirim">Toplam İndirim:</label>
+                        <input type="text" class="form-control" id="ToplamIndirim" value="@Model.ToplamIndirim" placeholder="Toplam İndirim">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="TeklifTarih">Teklif Tarih:</label>
+
+                        <input type="date" class="form-control daterange-single hasDatepicker" id="ToplamIndirim" placeholder="Teklif Tarih">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="Vade">Vade:</label>
+
+
+                        <select class="form-control" id="Vade">
+                            @if (Model.ID == 0)
+                            {
+                                <option value="">Vade Seçiniz</option>
+                            }
+
+
+                            <option value="0" @(Model.Vade == 0 && Model.ID > 0 ? "selected" : "" )>0</option>
+                            <option value="1" @(Model.Vade == 1 && Model.ID > 0 ? "selected" : "" )>1</option>
+                            <option value="2" @(Model.Vade == 2 && Model.ID > 0 ? "selected" : "" )>2</option>
+                            <option value="3" @(Model.Vade == 3 && Model.ID > 0 ? "selected" : "" )>3</option>
+                            <option value="4" @(Model.Vade == 4 && Model.ID > 0 ? "selected" : "" )>4</option>
+                            <option value="5" @(Model.Vade == 5 && Model.ID > 0 ? "selected" : "" )>5</option>
+                            <option value="6" @(Model.Vade == 6 && Model.ID > 0 ? "selected" : "" )>6</option>
+                            <option value="7" @(Model.Vade == 7 && Model.ID > 0 ? "selected" : "" )>7</option>
+                            <option value="8" @(Model.Vade == 8 && Model.ID > 0 ? "selected" : "" )>8</option>
+                            <option value="9" @(Model.Vade == 9 && Model.ID > 0 ? "selected" : "" )>9</option>
+                            <option value="10" @(Model.Vade == 10 && Model.ID > 0 ? "selected" : "" )>10</option>
+                            <option value="11" @(Model.Vade == 11 && Model.ID > 0 ? "selected" : "" )>11</option>
+                            <option value="12" @(Model.Vade == 12 && Model.ID > 0 ? "selected" : "" )>12</option>
+
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <label for="OdemeTuru">Ödeme Türü:</label>
+                        <select class="form-control" id="OdemeTuru">
+                            @if (Model.ID == 0)
+                            {
+                                <option value="">Ödeme Türü Seçiniz</option>
+                            }
+                            <option value="0" @(Model.OdemeTuru == 0 && Model.ID > 0 ? "selected" : "" )>Nakit</option>
+                            <option value="1" @(Model.OdemeTuru == 1 && Model.ID > 0 ? "selected" : "" )>Kredi Kartı</option>
+                            <option value="2" @(Model.OdemeTuru == 2 && Model.ID > 0 ? "selected" : "" )>Çek</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="ToplamIndirim">KDV uygulansın mı ?</label>
+
+
+                            <label class="switch form-control">
+                                <input id="kdvUygulansinmiUygulanmasinmi" class="switch-input" type="checkbox" />
+                                <span class="switch-label" data-on="Evet" data-off="Hayır"></span>
+                                <span class="switch-handle"></span>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default panel-collapsed">
+            <div class="panel-heading">
+                <h5 class="panel-title">Teklif Kalemleri</h5>
+                <div class="heading-elements">
+                    <ul class="icons-list">
+                        <li><a data-action="collapse" class="rotate-180"></a></li>
+                        <li><a href="javascript:void(0)"><i class="icon-plus-circle2 add-more"></i></a></li>
+                    </ul>
+                </div>
+                <a class="heading-elements-toggle"><i class="icon-menu"></i></a>
+                <a class="heading-elements-toggle"><i class="icon-menu"></i></a>
+            </div>
+
+            <div class="panel-body" style="display: none;">
+                @if (Model.ID > 0)
+                {
+                    <form action="">
+                        <div class="input-group control-group after-add-more">
+                            <div class="row">
+                                @foreach (var item in salist)
+                                {
+                                    if (item.SatinAlmaTeklifID == Model.ID)
+                                    {
+
+                                        <div class="col-md-12">
+
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="KalemAdi">Kalem Adı:</label>
+                                                    <input type="text" class="form-control" id="KalemAdi" value="@item.KalemAdi" placeholder="UrunAdi">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="BirimFiyat">Birim Fiyat:</label>
+                                                    <input type="text" class="form-control" id="BirimFiyat" value="@item.BirimFiyat" placeholder="Birim Fiyat">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="Indirim">İndirim(%):</label>
+                                                    <input type="number" class="form-control" id="Indirim" onchange="IndirimDegistir(@Model.ID)" value="@item.Indirim" placeholder="Indirim">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="Adet">Adet:</label>
+                                                    <input type="number" class="form-control" id="Adet" value="@item.Adet" placeholder="Adet">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="Aciklama">Açıklama:</label>
+                                                    <input type="text" class="form-control" id="Aciklama" value="@item.Aciklama" placeholder="Aciklama">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="Sil"></label>
+                                                    <button style="margin-top:25px;" class="btn btn-danger remove" type="button">Sil</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    }
+
+                                }
+
+                                <div class="col-md-12">
+                                    <a class="btn btn-success pull-right" href="javascript:;" onclick="TeklifGuncelle('@Model.ID')">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="copy-fields hide">
+                        <div class="control-group input-group" style="margin-top:10px">
+                            <div class="col-md-12">
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="UrunAdi">Kalem Adı:</label>
+                                        <input type="text" class="form-control" id="KalemAdi" value"" placeholder="KalemAdi">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="BirimFiyat">Birim Fiyat:</label>
+                                        <input type="text" class="form-control" id="BirimFiyat" value="" placeholder="Birim Fiyat">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Indirim">İndirim(%):</label>
+                                        <input type="number" class="form-control" id="Indirim" onchange="IndirimDegistir()" value="" placeholder="Indirim">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Adet">Adet:</label>
+                                        <input type="number" class="form-control" id="Adet" value="" placeholder="Adet">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Aciklama">Açıklama:</label>
+                                        <input type="text" class="form-control" id="Aciklama" value="" placeholder="Aciklama">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Sil"></label>
+                                        <button style="margin-top:25px;" class="btn btn-danger remove" type="button">Sil</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                }
+                else  //ekle kısmı için
+                {
+                    <form action="">
+
+                        <div class="input-group control-group after-add-more">
+
+                        </div>
+                    </form>
+                    <div class="copy-fields hide">
+                        <div class="control-group input-group" style="margin-top:10px">
+                            <div class="col-md-12">
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="UrunAdi">Kalem Adı:</label>
+                                        <input type="text" class="form-control" id="KalemAdi" value"" placeholder="KalemAdi">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="BirimFiyat">Birim Fiyat:</label>
+
+                                        <input type="text" value="0.00" class="form-control" id="BirimFiyat" placeholder="Birim Fiyat">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Indirim">İndirim(%):</label>
+                                        <input type="number" class="form-control" id="Indirim" onchange="IndirimDegistir()" value="" placeholder="Indirim">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Adet">Adet:</label>
+                                        <input type="number" class="form-control" id="Adet" value="" placeholder="Adet">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Aciklama">Açıklama:</label>
+                                        <input type="text" class="form-control" id="Aciklama" value="" placeholder="Aciklama">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="Sil"></label>
+                                        <button style="margin-top:25px;" class="btn btn-danger remove" type="button">Sil</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*<div class="col-md-6">
+            <div class="form-group">
+                <label for="Durum">Durum:</label>
+                <select class="form-control" id="Durum">
+                    @if (Model.ID == 0)
+                    {
+                        <option value="">Durumu Seçiniz</option>
+                    }
+                    <option value="0" @(Model.Durum == 0 && Model.ID > 0 ? "selected" : "" )>Beklemede</option>
+                    <option value="1" @(Model.Durum == 1 && Model.ID > 0 ? "selected" : "" )>Onaylandı</option>
+                    <option value="2" @(Model.Durum == 2 && Model.ID > 0 ? "selected" : "" )>İptal</option>
+                </select>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Tutar">Tutar:</label>
+
+                <input type="text" class="form-control" id="Tutar" value="@Model.Tutar" placeholder="Tutar">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="KdvOran">KDV:</label>
+
+
+                <select class="form-control" id="KdvOran">
+                    @if (Model.ID == 0)
+                    {
+                        <option value="">KDV Seçiniz</option>
+                    }
+                    <option value="1" @(Model.KdvOran == 1 && Model.ID > 0 ? "selected" : "" )>Yok</option>
+                    <option value="8" @(Model.KdvOran == 2 && Model.ID > 0 ? "selected" : "" )>%8</option>
+                    <option value="18" @(Model.KdvOran == 3 && Model.ID > 0 ? "selected" : "" )>%18</option>
+                </select>
+
+            </div>
+        </div>
+    </div>*@
+@*<div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Indirim">İndirim %:</label>
+                <input type="number" min="0" class="form-control" id="Indirim" value="@Model.Indirim" placeholder="Indirim">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Vade">Vade:</label>
+
+
+                <select class="form-control" id="Vade">
+                    @if (Model.ID == 0)
+                    {
+                        <option value="">Vade Seçiniz</option>
+                    }
+
+
+                    <option value="0" @(Model.Vade == 0 && Model.ID > 0 ? "selected" : "" )>0</option>
+                    <option value="1" @(Model.Vade == 1 && Model.ID > 0 ? "selected" : "" )>1</option>
+                    <option value="2" @(Model.Vade == 2 && Model.ID > 0 ? "selected" : "" )>2</option>
+                    <option value="3" @(Model.Vade == 3 && Model.ID > 0 ? "selected" : "" )>3</option>
+                    <option value="4" @(Model.Vade == 4 && Model.ID > 0 ? "selected" : "" )>4</option>
+                    <option value="5" @(Model.Vade == 5 && Model.ID > 0 ? "selected" : "" )>5</option>
+                    <option value="6" @(Model.Vade == 6 && Model.ID > 0 ? "selected" : "" )>6</option>
+                    <option value="7" @(Model.Vade == 7 && Model.ID > 0 ? "selected" : "" )>7</option>
+                    <option value="8" @(Model.Vade == 8 && Model.ID > 0 ? "selected" : "" )>8</option>
+                    <option value="9" @(Model.Vade == 9 && Model.ID > 0 ? "selected" : "" )>9</option>
+                    <option value="10" @(Model.Vade == 10 && Model.ID > 0 ? "selected" : "" )>10</option>
+                    <option value="11" @(Model.Vade == 11 && Model.ID > 0 ? "selected" : "" )>11</option>
+                    <option value="12" @(Model.Vade == 12 && Model.ID > 0 ? "selected" : "" )>12</option>
+
+
+                </select>
+
+
+            </div>
+        </div>
+        @*<div class="col-md-6">
+            <div class="form-group">
+                <label for="ToplamTutar">Toplam TUtar:</label>
+                <input type="text" class="form-control" id="ToplamTutar" readonly="readonly" value="@Model.ToplamTutar" placeholder="Toplam Tutar">
+            </div>
+        </div>
+
+    </div>*@
+
+
+
+
+
+@*<div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="TeklifTarih">Teklif Tarih:</label>
+                <input type="date" class="form-control" id="TeklifTarih" value="@Model.Vade" placeholder="TeklifTarih">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="OdemeTuru">Ödeme Türü:</label>
+                <select class="form-control" id="OdemeTuru">
+                    @if (Model.ID == 0)
+                    {
+                        <option value="">Ödeme Türü Seçiniz</option>
+                    }
+                    <option value="0" @(Model.OdemeTuru == 0 && Model.ID > 0 ? "selected" : "" )>Nakit</option>
+                    <option value="1" @(Model.OdemeTuru == 1 && Model.ID > 0 ? "selected" : "" )>Kredi Kartı</option>
+                    <option value="2" @(Model.OdemeTuru == 2 && Model.ID > 0 ? "selected" : "" )>Çek</option>
+
+                </select>
+
+            </div>
+        </div>
+    </div>*@
+@*<div class="row">
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="Tarih">Teklif Detay</label>
+
+                <input type="text" class="form-control alpaca-field-ckeditor" id="TeklifDetay" value="@Model.TeklifDetay" placeholder="teklif detay">
+                <script>
+
+                    CKEDITOR.replace("TeklifDetay", {
+
+                        enterMode: CKEDITOR.ENTER_BR
+                    });
+
+
+
+
+                </script>
+
+
+            </div>
+        </div>
+
+    </div>*@
+
+
+@*<div class="row">
+        @if (Model.ID == 0)
+        {
+            <div class="col-md-12">
+
+                <a class="btn btn-success pull-right" onclick="TeklifEkle()">Ekle <i class="icon-checkmark4 position-right"></i></a>
+
+            </div>
+        }
+        else
+        {
+            <div class="col-md-12">
+                <a class="btn btn-success pull-right" href="javascript:;" onclick="TeklifGuncelle('@Model.ID')">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+            </div>
+        }
+
+
+    </div>*@
+

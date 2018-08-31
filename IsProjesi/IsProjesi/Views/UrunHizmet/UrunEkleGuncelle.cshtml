@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "UrunEkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    UrunHizmetKategoriBLL urunHizmetKategoriBLL = new UrunHizmetKategoriBLL();
+    List<UrunHizmetKategori> urunHizmetKategoriList = urunHizmetKategoriBLL.GetAll().ToList();
+    KdvBLL kdvBLL = new KdvBLL();
+    List<Kdv> KdvList = kdvBLL.GetAll().ToList();
+
+    MiktarTurBLL miktarTurBLL = new MiktarTurBLL();
+    List<MiktarTur> miktarTurList = miktarTurBLL.GetAll().ToList();
+
+
+
+
+}
+@model UrunHizmet
+<script src="~/Scripts/InotrScript/UrunHizmet.js"></script>
+<div class="content-wrapper">
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+                    <a href="#" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class="" icon-arrow-left13"></i></a><span class="text-semibold">Urunler ve Hizmetler</span>
+
+                </h5>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="UrunAdi">Başlık:</label>
+                        <input type="text" class="form-control" id="UrunAdi" value="@Model.UrunAdi" placeholder="ürün adı">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="UrunTipID">Tip:</label>
+                        <select class="form-control" id="UrunTipID">
+                            @if (Model.ID == 0)
+                            {
+                                <option value="">Tip Seçiniz</option>
+                            }
+                            <option value="1" @(Model.UrunTipID== 1 && Model.ID > 0 ? "selected" : "" )>ürün</option>
+                            <option value="0" @(Model.UrunTipID == 0 && Model.ID > 0 ? "selected" : "" )>Hizmet</option>
+                        </select>
+                    </div>
+                </div>
+               
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="Kategori">Kategori:</label>
+
+                        <select id="KategoriListe" class="form-control">
+                            @foreach (UrunHizmetKategori item in urunHizmetKategoriList)
+                            {
+                                <option value="@item.ID" @(Model.KategoriID == item.ID ? "selected" : "")>@item.Ad</option>
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="UrunKodu">Urun Kodu:</label>
+                        <input type="text" class="form-control" id="UrunKodu" value="@Model.UrunKodu" placeholder="ürün kodu">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="Fiyat">Fiyatı:</label>
+                        <input type="text" class="form-control" id="Fiyat" value="@Model.Fiyat" placeholder="fiyat">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="KDV Durumu">KDV Durumu:</label>
+                       
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="KDV Oran">KDV Oranı:</label>
+
+                        <select id="KDVListe" class="form-control">
+                            @foreach (Kdv item in KdvList)
+                            {
+                                <option value="@item.ID" @(Model.KdvID == item.ID ? "selected" : "")>@item.KdvYuzdesi</option>
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="Stok Durumu">Stok Durumu:</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="Miktar Tür">Miktar Türü:</label>
+
+                        <select id="MiktarTurListe" class="form-control">
+                            @foreach (MiktarTur item in miktarTurList)
+                            {
+                                <option value="@item.ID" @(Model.MiktarTurD == item.ID ? "selected" : "")>@item.MiktarTurAdi</option>
+                            }
+
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Döngüsellik Durumu">Döngüsellik Durumu:</label>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Döngü Aralığı">Döngü Aralığı:</label>
+
+                        <select class="form-control" id="DonguAralik" data-live-search="true">
+                            @if (Model.ID == 0)
+                            {
+                                <option value="">Aralık Seçiniz</option>
+                            }
+                            <option value="0" @(Model.UrunTipID == 0 && Model.ID > 0 ? "selected" : "" )>1 Ay</option>
+                            <option value="1" @(Model.UrunTipID == 1 && Model.ID > 0 ? "selected" : "" )>2 Ay</option>
+                            <option value="2" @(Model.UrunTipID == 2 && Model.ID > 0 ? "selected" : "" )>3 Ay</option>
+                            <option value="3" @(Model.UrunTipID == 3 && Model.ID > 0 ? "selected" : "" )>4 Ay</option>
+                            <option value="4" @(Model.UrunTipID == 4 && Model.ID > 0 ? "selected" : "" )>5 Ay</option>
+                            <option value="5" @(Model.UrunTipID == 5 && Model.ID > 0 ? "selected" : "" )>6 Ay</option>
+                            <option value="6" @(Model.UrunTipID == 6 && Model.ID > 0 ? "selected" : "" )>7 Ay</option>
+                            <option value="7" @(Model.UrunTipID == 7 && Model.ID > 0 ? "selected" : "" )>8 Ay</option>
+                            <option value="8" @(Model.UrunTipID == 8 && Model.ID > 0 ? "selected" : "" )>9 Ay</option>
+                            <option value="9" @(Model.UrunTipID == 9 && Model.ID > 0 ? "selected" : "" )>10 Ay</option>
+                            <option value="10" @(Model.UrunTipID == 10 && Model.ID > 0 ? "selected" : "" )>11 Ay</option>
+                            <option value="11" @(Model.UrunTipID == 11 && Model.ID > 0 ? "selected" : "" )>1 Yıl</option>
+                        </select>
+
+                       
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Döngüsel Fiyatı<">Döngüsel Fiyatı</label>
+                        <input type="text" class="form-control" id="DonguselFiyat" value="@Model.DonguselFiyat" placeholder="döngüsel fiyat">
+                    </div>
+                </div>
+
+            </div>
+
+      
+            <div class="row">
+                @if (Model.ID == 0)
+                {
+                    <div class="col-md-12">
+
+                        <a class="btn btn-success pull-right" onclick="TedarikEkle()">Ekle <i class="icon-checkmark4 position-right"></i></a>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-12">
+                        <a class="btn btn-success pull-right" href="javascript:;" onclick="TedarikGuncelle(@Model.ID)">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+                    </div>
+                }
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+

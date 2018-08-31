@@ -1,0 +1,23 @@
+﻿@model List<SatinAlmaTeklif_Detay>
+
+@{
+
+    double toplam = 0;
+}
+<div>
+    @foreach (var item in Model)
+    {
+
+
+
+
+        double? d2 = toplam as double?;
+
+
+       d2 = item.Indirim + item.BirimFiyat + item.Adet;
+
+
+
+    }
+</div>
+<input type="text" id="topindirim" value="@toplam" />

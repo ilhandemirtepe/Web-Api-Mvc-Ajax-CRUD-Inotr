@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "KasaHareketEkleGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/InotrScript/Kasa.js"></script>
+<div class="content-wrapper">
+
+
+    <div class="page-header panel" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5>
+
+                    <a href="?" class="btn bg-grey btn-icon btn-rounded btn-xs mr-10"><i class=" icon-arrow-left13"></i></a><span class="text-semibold">Kasa Hareketleri Yeni</span>
+
+                </h5>
+            </div>
+        </div>
+
+
+
+        <div class="panel-body">
+            <form id="KasHarekForm" method="post">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="tip">Tip</label>
+                            <select class="select select2-hidden-accessible" id="tip" tabindex="-1" aria-hidden="true">
+                                <option value="GELİR">GELİR</option>
+                                <option value="GİDER">GİDER</option>
+
+                            </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-tip-container"><span class="select2-selection__rendered" id="select2-tip-container" title="GELİR">GELİR</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="odeme_tarih">Ödeme Tarihi: </label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="icon-calendar22"></i></span>
+                                <input type="text" name="odeme_tarih" id="odeme_tarih" placeholder="Ödeme Tarihi" class="form-control daterange-single hasDatepicker" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="tutar">Tutar:</label>
+                            <input type="text" class="form-control" name="tutar" id="tutar" value="" placeholder="Tutar">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="aciklama">Açıklama:</label>
+                            <textarea class="form-control" name="aciklama" id="aciklama" placeholder="Açıklama"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="checkbox checkbox-switch" style="margin-top: 0;">
+                                <p>Durumu:</p>
+                                <label>
+                                    <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-off bootstrap-switch-id-durum bootstrap-switch-animate" style="width: 124px;"><div class="bootstrap-switch-container" style="width: 183px; margin-left: -61px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 61px;">AKTİF</span><span class="bootstrap-switch-label" style="width: 61px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 61px;">IPTAL</span><input type="checkbox" data-on-text="AKTİF" data-off-text="IPTAL" id="durum" class="switch"></div></div>
+
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="btn btn-success pull-right" onclick="GuncelleSayfasiniAc()">Kaydet <i class="icon-checkmark4 position-right"></i></a>
+                    </div>
+
+                </div>
+            </form>
+            <script type="text/javascript">
+
+
+
+                   
+
+                    
+
+                        $(function () {
+                            if (getParameterByName("op") == "edit" && getParameterByName("id") > 0) {
+                                localStorage.setItem("id", getParameterByName("id"));
+                                kasalistele(getParameterByName("id"));
+                            } else {
+                                localStorage.setItem("id", 0);
+                            }
+
+                        });
+            </script>
+
+        </div>
+    </div>
+
+
+</div>

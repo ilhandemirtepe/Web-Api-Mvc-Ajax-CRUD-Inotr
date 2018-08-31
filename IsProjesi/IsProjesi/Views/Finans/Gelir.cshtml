@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Gelir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="panel panel-body text-center">
+                <a href="@Url.Action("Gelir_Faturalar","Finans")">
+
+                    <p class="text-muted content-group-sm"><i class="icon-3x icon-file-text text-info"></i></p>
+                    <h5 class="no-margin text-semibold">Faturalar</h5>
+
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-body text-center">
+                <a href="@Url.Action("Gelir_Kasa","Finans")">
+
+                    <p class="text-muted content-group-sm"><i class="icon-3x icon-safe text-info"></i></p>
+                    <h5 class="no-margin text-semibold">Kasa</h5>
+
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="panel panel-body text-center">
+                <a href="@Url.Action("Gelir_Odemeler","Finans")">
+
+                    <p class="text-muted content-group-sm"><i class="icon-3x icon-price-tag text-info"></i></p>
+                    <h5 class="no-margin text-semibold">Ödemeler</h5>
+
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

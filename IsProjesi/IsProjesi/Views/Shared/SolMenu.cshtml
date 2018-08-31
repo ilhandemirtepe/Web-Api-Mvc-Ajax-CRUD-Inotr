@@ -1,0 +1,170 @@
+﻿
+
+<div class="sidebar sidebar-main sidebar-default">
+    <div class="sidebar-content">
+        <!-- Main navigation -->
+        <div class="sidebar-category sidebar-category-visible">
+            @*<div class="category-title h6">
+                <span>Main navigation</span>
+                <ul class="icons-list">
+                    <li><a href="#" data-action="collapse"></a></li>
+                </ul>
+            </div>
+            <div class="category-content sidebar-user">
+                <div class="media">
+                    <a href="#" class="media-left"><img src="assets/images/demo/users/face11.jpg" class="img-circle img-sm" alt=""></a>
+                    <div class="media-body">
+                        <span class="media-heading text-semibold"></span>
+                        <div class="text-size-mini text-muted">
+                            <i class="icon-pin text-size-small"></i> &nbsp;Santa Ana, CA
+                        </div>
+                    </div>
+                    <div class="media-right media-middle">
+                        <ul class="icons-list">
+                            <li>
+                                <a href="#"><i class="icon-cog3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>*@
+            <div class="category-content no-padding">
+                <ul class="navigation navigation-main navigation-accordion">
+                    <!-- Main -->
+                    <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+                    <li class="active"><a href="index.html"><i class="icon-graph bg-orange btn-rounded btn-xs"></i> <span>Anasayfa</span></a></li>
+                   
+                  
+                    <li>
+                        <a href="@Url.Action("Index", "Firma")"><i class="icon-library2 bg-grey btn-rounded btn-xs"></i> <span>Firma</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("Bilgiler", "Firma")">Bilgiler</a></li>
+                            <li><a href="@Url.Action("Index", "Yetki")">Yetkiler</a></li>
+                            <li><a href="@Url.Action("Index", "Kullanici")">Kullanıcılar</a></li>
+                           
+                         
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-stack-text bg-orange btn-rounded btn-xs"></i> <span>Evrak</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("CariEvraklar", "Evrak")">Cari Evraklar</a></li>
+                            <li><a href="@Url.Action("FirmaEvraklari", "Evrak")">Firma Evrakları</a></li>
+                            <li><a href="@Url.Action("MusteriEvraklari", "Evrak")">Müşteri Evrakları</a></li>
+
+
+                        </ul>
+
+                     
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "UrunHizmet")"><i class="icon-briefcase3 bg-grey btn-rounded btn-xs"></i> <span>Ürünler-Hizmetler</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("Kategoriler", "UrunHizmet")">Kategoriler</a></li>
+                            <li><a href="@Url.Action("Urunler", "UrunHizmet")">Ürünler</a></li>
+                            <li><a href="@Url.Action("StokHareketleri", "UrunHizmet")">Stok Hareketleri</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <i class="icon-cart bg-orange btn-rounded btn-xs"></i> <span>Satın Alma</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("Kategori", "SatinAlma")">Kategori</a></li>
+                            <li><a href="@Url.Action("Tedarikci", "SatinAlma")">Tedarikçi</a></li>
+                            <li><a href="@Url.Action("Teklif", "SatinAlma")">Teklif</a></li>
+                            <li><a href="@Url.Action("Siparis", "SatinAlma")">Sipariş</a></li>
+                       
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-calculator3 bg-grey btn-rounded btn-xs"></i> <span>Finans</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("Kasa", "Finans")">Kasa</a></li>
+                            <li><a href="@Url.Action("Gider", "Finans")">Gider</a></li>
+                            <li><a href="@Url.Action("Gelir", "Finans")">Gelir</a></li>
+                        
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-cart2 bg-orange btn-rounded btn-xs"></i> <span>Satış</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("Talep", "Satis")">Talep</a></li>
+                            <li><a href="@Url.Action("Teklif", "Satis")">Teklif</a></li>
+                            <li><a href="@Url.Action("Siparis", "Satis")">Sipariş</a></li>
+                  
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-users4 bg-grey btn-rounded btn-xs"></i> <span>Müşteri</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("IletisimBilgi", "Musteri")">İletişim/Bilgi</a></li>
+                            <li><a href="@Url.Action("Talep", "Musteri")">Talep</a></li>
+                            <li><a href="@Url.Action("Teklif", "Musteri")">Teklif</a></li>
+                            <li><a href="@Url.Action("Satis", "Musteri")">Satış</a></li>
+                            <li><a href="@Url.Action("Is", "Musteri")">İş</a></li>
+                            <li><a href="@Url.Action("Fatura", "Musteri")">Fatura</a></li>
+                            <li><a href="@Url.Action("Odeme", "Musteri")">Ödeme</a></li>
+                            <li><a href="@Url.Action("Evrak", "Musteri")">Evrak</a></li>
+                            <li><a href="@Url.Action("Destek", "Musteri")">Destek</a></li>
+                            <li><a href="@Url.Action("Not", "Musteri")">Not</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-briefcase bg-orange btn-rounded btn-xs"></i> <span>İşler</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("UrunHizmet", "Isler")">Ürün/Hizmet</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-shield-check bg-grey btn-rounded btn-xs"></i> <span>Destek</span></a>
+                        <ul>
+                            <li><a href="@Url.Action("Bildirim", "Destek")">Bildirim</a></li>
+                            <li><a href="@Url.Action("Kategori", "Destek")">Kategori</a></li>
+                      
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-pie5 bg-orange btn-rounded btn-xs"></i> <span>Raporlama</span></a>
+                        <ul>
+                            <li><a href="colors_primary.html">Primary palette</a></li>
+                   
+                        </ul>
+                    </li>
+                  
+                   
+                    <!-- /main -->
+                    <!-- Forms -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Forms"></i></li>
+             
+                    <!-- /forms -->
+                    <!-- Appearance -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Appearance"></i></li>
+              
+                    <!-- /appearance -->
+                    <!-- Layout -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Layout options"></i></li>
+           
+                    <!-- /layout -->
+                    <!-- Data visualization -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Data visualization"></i></li>
+             
+                    <!-- /data visualization -->
+                    <!-- Extensions -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Extensions"></i></li>
+                
+                    <!-- /extensions -->
+                    <!-- Tables -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Tables"></i></li>
+             
+                    <!-- /tables -->
+                    <!-- Page kits -->
+                    <li class="navigation-header"><span></span> <i class="icon-menu" title="Page kits"></i></li>
+          
+                    <!-- /page kits -->
+                </ul>
+            </div>
+        </div>
+        <!-- /main navigation -->
+    </div>
+</div>
+

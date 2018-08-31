@@ -1,0 +1,225 @@
+﻿
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<UrunHizmetKategori>
+
+
+<div class="content-wrapper">
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+
+            <h5>
+
+                <a href="urunhizmet_modul.aspx" class=""></a><span class="">Ürün &amp; Hizmet Kategorileri</span>
+
+
+            </h5>
+
+            <div class="heading-elements">
+                <ul class="icons-list">
+                    <li><a href="?" class="btn btn-default btn-xs"><b><i class="icon-backward"></i></b>&nbsp;GERİ</a></li>
+                    <li><a href="@Url.Action("KategoriEkleGuncelle","UrunHizmet")" class="btn btn-default btn-xs"><b><i class=" icon-plus-circle2"></i></b>&nbsp;YENİ KATEGORİ</a></li>
+                    <li><a data-action="collapse"></a></li>
+                    <li><a data-action="reload"></a></li>
+                    <li><a data-action="close"></a></li>
+                </ul>
+            </div>
+
+            <a class="heading-elements-toggle"><i class="icon-menu"></i></a>
+        </div>
+
+        <div class="panel-body">
+            <div id="tablekategori_wrapper" class="dataTables_wrapper no-footer">
+                <div class="datatable-scroll">
+                    <table id="tablekategori" class="table datatable-basic table-hover no-footer dataTable" role="grid" aria-describedby="tablekategori_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="tablekategori" rowspan="1" colspan="1" aria-label="ID: activate to sort column descending" style="width: 45px;" aria-sort="ascending">ID</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="tablekategori" rowspan="1" colspan="1" aria-label="Başlık: activate to sort column descending" style="width: 45px;" aria-sort="ascending">Başlık</th>
+                                <th class="sorting" tabindex="0" aria-controls="tablekategori" rowspan="1" colspan="1" aria-label="Üst Kategori: activate to sort column ascending" style="width: 85px;">Üst Kategori</th>
+
+                                <th class="sorting" tabindex="0" aria-controls="tablekategori" rowspan="1" colspan="1" aria-label="Eklenme Tarihi: activate to sort column ascending" style="width: 101px;">Eklenme Tarihi</th>
+                                <th class="text-center sorting" tabindex="0" aria-controls="tablekategori" rowspan="1" colspan="1" aria-label="İşlemler: activate to sort column ascending" style="width: 57px;">İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+
+
+                                <tr role="row" class="odd">
+                                    <td>@item.ID</td>
+                                    <td style="" class="sorting_1">
+                                        <span style="display:none">1500- </span>
+                                        <span style="font-weight:bold">@item.Ad</span>
+                                    </td>
+                                    @if (item.UstID > 0)
+                                    {
+                                        UrunHizmetKategori ustKategori = new UrunHizmetKategori();
+                                        UrunHizmetKategoriBLL KategoriBLL = new UrunHizmetKategoriBLL();
+                                        ustKategori = KategoriBLL.GetById(item.UstID);
+                                        <td>@ustKategori.Ad</td>
+                                    }
+                                    else
+                                    {
+                                        <td>Üst Kategorisi Yok</td>
+                                    }
+
+
+                                    <td>@item.Tarih</td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li onclick="KategoriGuncellemeSayfasiniAc(@item.ID)"><a href="#"><i class="btn btn-primary"></i>Düzenle</a></li>
+                                                    <li onclick="UrunHizmetKategoriSil(@item.ID)"><a href="#"><i class="btn btn-danger"></i>Sil</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>
+<script src="~/Scripts/InotrScript/UrunHizmet.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#tablekategori').DataTable({
+
+
+
+            "language": {
+                "sDecimal": ",",
+                "sEmptyTable": "Tabloda herhangi bir veri mevcut değil",
+                "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
+                "sInfoEmpty": "Kayıt yok",
+                "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "Sayfada _MENU_ kayıt göster",
+                "sLoadingRecords": "Yükleniyor...",
+                "sProcessing": "İşleniyor...",
+                "sSearch": "Ara:",
+                "sZeroRecords": "Eşleşen kayıt bulunamadı",
+                "oPaginate": {
+                    "sFirst": "İlk",
+                    "sLast": "Son",
+                    "sNext": "Sonraki",
+                    "sPrevious": "Önceki"
+                },
+                "oAria": {
+                    "sSortAscending": ": artan sütun sıralamasını aktifleştir",
+                    "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+                }
+            }, buttons: [
+      'copy', 'pdf', 'excel', 'csv'
+            ]
+
+
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="content-wrapper">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                @*<a href="/Yetki/EkleGuncelle">
+                        <input type="button" name="name" value="Yeni Kategori  Ekle" class="btn btn-primary">
+                    </a>
+
+
+    <div class="heading-elements">
+        <ul class="icons-list">
+            <li><a data-action="collapse"></a></li>
+            <li><a data-action="reload"></a></li>
+            <li><a data-action="close"></a></li>
+        </ul>
+    </div>
+            </div>
+    <table class="table datatable-responsive-control-right">
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Üst Kategori Adı</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    @if (item.UstID == 0)
+                    {
+                        <td>@item.Ad</td>
+                    }
+                    <td>@item.Tarih</td>
+
+
+                    <td class="text-center">
+                        <ul class="icons-list">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-menu9"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="#"><i class="btn btn-primary"></i>Düzenle</a></li>
+                                    <li><a><i class="btn btn-danger"></i>Sil</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+        </div>
+    </div>*@

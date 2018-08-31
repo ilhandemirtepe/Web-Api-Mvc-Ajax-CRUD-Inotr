@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e030096b33644299bdeff340a7fa2b9b" Name="Diagram1">
+        <EntityTypeShape EntityType="inotr_sistemModel.BankaHesapBilgisi" Width="1.5" PointX="7.5" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.DestekBildirimler" Width="1.5" PointX="15.5" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.DestekKategori" Width="1.5" PointX="13.25" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.DestekMesajlari" Width="1.5" PointX="20.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Evrak" Width="1.5" PointX="10.5" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.EvrakTur" Width="1.5" PointX="8.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Firma" Width="1.5" PointX="5.25" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GelirFatura" Width="1.5" PointX="10.5" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GelirFatura_Detay" Width="1.5" PointX="12.75" PointY="50.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GelirOdeme" Width="1.5" PointX="12.75" PointY="54" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GenelTasarimAyarlari" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GiderFatura" Width="1.5" PointX="15" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GiderFatura_Detay" Width="1.5" PointX="17.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.GiderOdeme" Width="1.5" PointX="17.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.il" Width="1.5" PointX="0.75" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.ilce" Width="1.5" PointX="3" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Isler" Width="1.5" PointX="18" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Kasa" Width="1.5" PointX="17.25" PointY="56" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.KasaHareketleri" Width="1.5" PointX="19.5" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Kdv" Width="1.5" PointX="13.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Kullanici" Width="1.5" PointX="18.5" PointY="51.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.MiktarTur" Width="1.5" PointX="13.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Musteri" Width="1.5" PointX="8.25" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.MusteriAdaylari" Width="1.5" PointX="5.25" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Not" Width="1.5" PointX="13.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.PosBilgisi" Width="1.5" PointX="10.5" PointY="61" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatinAlmaBankaHesapBilgisi" Width="1.5" PointX="10.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatinAlmaSiparis" Width="1.5" PointX="12.75" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatinAlmaSiparis_Detay" Width="1.5" PointX="15" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatinAlmaTeklif" Width="1.5" PointX="10.5" PointY="38.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatinAlmaTeklif_Detay" Width="1.5" PointX="12.75" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatisSiparis" Width="1.5" PointX="17.5" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatisSiparis_Detay" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatisTalep" Width="1.5" PointX="13.5" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatisTeklif" Width="1.5" PointX="15.75" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SatisTeklif_Detay" Width="1.5" PointX="18" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Sistem" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.SistemIletisim" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.StokHareketleri" Width="1.5" PointX="18" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Tedarikci" Width="1.5" PointX="8.25" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.UrunHizmet" Width="1.5" PointX="15.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.UrunHizmetKategori" Width="1.5" PointX="13.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.FirmaFaturaBilgi" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.KullaniciYetki" Width="1.5" PointX="20.75" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.ParaBirimi" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.TedarikciTur" Width="1.5" PointX="6" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inotr_sistemModel.Yetki" Width="1.5" PointX="6" PointY="42.5" IsExpanded="true" />
+        <AssociationConnector Association="inotr_sistemModel.FK_BankaHesapBilgisi_Firma1" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_DestekBildirimler_DestekKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_DestekBildirimler_Isler" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_DestekBildirimler_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_DestekMesaj_DestekBildirim" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_DestekMesaj_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_DestekMesaj_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Evrak_EvrakTur" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Evrak_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Evrak_Tedarikci" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Firma_il" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Firma_ilce1" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GelirFatura_Detay_GelirFatura" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GelirFatura_GelirFatura" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GelirFatura_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GelirFatura_SatisSiparis" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GelirOdeme_GelirFatura" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_KasaHareket_GelirOdeme" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GiderFatura_SatinAlmaSiparis" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GiderFatura_Sub_GiderFatura" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GiderFatura_Tedarikci" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_GiderOdeme_GiderFatura" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_KasaHareket_GiderOdeme" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_ilce_il1" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Tedarikci_il" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Musteri_ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_MusteriAday_ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Tedarikci_ilce" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Is_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Is_SatinAlmaSiparis" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Is_SatisSiparis" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Is_UrunHizmet" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_KasaHareketleri_Kasa" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Urun_Kdv1" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_KullaniciYetki_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Urun_MiktarTur" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Musteri_Yetki" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Not_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_PosBilgisi_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisSiparis_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisTalep_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisTeklif_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisTalep_MusteriAday" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisTeklif_MusteriAday" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Not_Tedarikci" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatinAlmaBankaHesapBilgisi_SatinAlmaTedarik1" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatinAlmaSiparis_SatinAlmaTeklif" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatinAlmaSiparis_Sub_SatinAlmaSiparis" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatinAlmaTeklif_Detay_SatinAlmaTeklif" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatinAlmaTeklif_Tedarikci" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisSiparis_SatisTeklif" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisTeklif_SatisTalep" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_SatisTeklif_Sub_SatisTeklif" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_StokHareketleri_Urun1" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Tedarik_TedarikTur" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_Urun_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="inotr_sistemModel.FK_KullaniciYetki_Yetki" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

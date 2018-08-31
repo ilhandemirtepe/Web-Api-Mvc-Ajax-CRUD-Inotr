@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Bilgiler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="panel panel-body text-center">
+                <a onclick="AllcarDetails()" href="@Url.Action("Bilgiler_iletisim","Firma")">
+
+
+                    <p class="text-muted content-group-sm"><i class="icon-3x icon-address-book3 text-info"></i></p>
+                    <h5 class="no-margin text-semibold">İletişim</h5>
+
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="panel panel-body text-center">
+                <a href="@Url.Action("Bilgiler_Fatura","Firma")">
+
+                    <p class="text-muted content-group-sm"><i class="icon-3x icon-file-text2 text-info"></i></p>
+                    <h5 class="no-margin text-semibold">Fatura</h5>
+
+                </a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+
+
